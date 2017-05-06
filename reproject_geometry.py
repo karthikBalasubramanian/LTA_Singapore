@@ -4,6 +4,7 @@ import numpy as np
 import pyproj as pp
 import multiprocessing as mp
 import glob
+import os.path
 
 from shapely.geometry import Point
 
@@ -16,10 +17,14 @@ def main():
 	file_list = glob.glob("../data/taxi_data/taxi_report_*.csv")
 	pool = mp.Pool(processes=8)
 	for file in file_list:
-		df = pd.read_csv(file)
 		fn = file.split('/')
 		new_fn = '/'.join(fn[:-1])+'/utm/'+fn[-1]
-		print(new_fn)
+		if os.path.isfile(new_fn):
+			print('skipping: ', file)
+			continue
+		else:
+			print(new_fn)
+		df = pd.read_csv(file, dtype = {'Latitude':np.float,'Longitude':np.float}, error_bad_lines=False)
 		lat = df['Latitude'].values
 		lon = df['Longitude'].values
 		X,Y = zip(*pool.starmap(project, zip(lat, lon))) 
