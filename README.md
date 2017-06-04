@@ -1,2 +1,4 @@
-# LTA_Singapore
-Demand Forecasting Singapore's Taxi Coverage based on Public transport movements
+# How are Taxis enhancing the Singapore's Public Transport System?
+Singapore is a city nation in the South East Asia. It has an extensive public transport network that comprises of a rail network and bus network. In addition, there are street hail taxis and ride sharing services such as Grab and Uber operating the public/private space. Singapore transport system is technology advanced and data driven. The Land Transport Authority (LTA) of Singapore is the regulatory authority for transportation. The LTA publishes a wide variety of transport-related datasets (static and dynamic / realtime) on DataMall for enterprises, third-party developers, and other members of the public to promote citizen co-creation of innovative and inclusive transport solutions. This is rich data source which makes Singapore suitable for a data science study.
+Bus and rail system have fixed routes and schedules thus they have deterministic coverage patterns which meet a fix transportation demand. On the other hand, taxicabs and ride sharing services do not have fixed routes or schedules thus in some sense, they meet the "ad hoc" demands.
+We are interested to find out if the supply pattern of taxicabs fill the gaps in the public transport network.
